@@ -12,8 +12,14 @@ main{max-width:560px;margin:0 auto;padding:16px}
 section{background:#fff;border-radius:16px;padding:20px 16px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 h2{font-size:20px;margin:0 0 10px}h2 span{background:linear-gradient(transparent 55%,var(--yel) 55%)}
 img{width:100%;border-radius:10px;display:block}
-.btn{display:block;text-align:center;font-weight:800;font-size:18px;padding:16px;border-radius:999px;text-decoration:none;margin:14px 0}
-.dl{background:var(--yel);color:var(--navy)}.go{background:var(--navy);color:#fff}
+.btn{display:block;text-align:center;font-weight:800;font-size:19px;padding:18px 16px;border-radius:999px;
+  text-decoration:none;margin:20px 0;letter-spacing:.02em;
+  transition:transform .12s ease,box-shadow .12s ease}
+.btn .arw{display:inline-block;margin-left:8px;transition:transform .2s ease}
+.btn:hover .arw{transform:translateX(5px)}
+.dl{background:var(--yel);color:var(--navy);box-shadow:0 4px 0 #c9a800}
+.go{background:var(--navy);color:#fff;box-shadow:0 4px 0 #060f26}
+.btn:active{transform:translateY(4px);box-shadow:0 0 0 transparent}
 .note{font-size:13px;color:var(--gray)}
 .good{background:#f6faf7;border-left:5px solid #1c785a;border-radius:0 10px 10px 0;padding:12px 14px;margin:12px 0}
 .good b{color:#1c785a}.brand{text-align:center;font-weight:800}
@@ -45,7 +51,7 @@ img{width:100%;border-radius:10px;display:block}
 <h2><span>製造業に特化した相談先</span></h2>
 <p>製造業・メーカーに特化した転職エージェント<b>「メーカーズジョブ」</b>の無料相談です。</p>
 <ul><li>最初の面談で、今の状況・転職の目的・希望の条件を聞いて、キャリアを整理</li><li>求人の紹介・面接の対策・内定後の退職の相談まで</li><li>応募するかどうかは、自分で決める</li></ul>
-<a class="btn go" href="https://px.a8.net/svt/ejp?a8mat=4BGBN4+DML78Y+5B0Y+TSBE9&amp;a8sns=instagram" rel="sponsored noopener" target="_blank">無料相談を申し込む（PR）</a>
+<a class="btn go" href="https://px.a8.net/svt/ejp?a8mat=4BGBN4+DML78Y+5B0Y+TSBE9&amp;a8sns=instagram" rel="sponsored noopener" target="_blank">無料相談を申し込む（PR）<span class="arw">→</span></a>
 <p class="note">ボタンを押すと、申し込みフォーム（名前・生年月日・メール・電話）が開きます。学生の方は対象外です。<br>てつ先輩はこのサービスを使ったことはありません。公式サイトの情報をもとに紹介しています。</p>
 </section>
 <p class="note" style="text-align:center"><a href="./">← 入口のページへ戻る</a></p>
