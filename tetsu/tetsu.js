@@ -1,17 +1,32 @@
-// メニューが画面からはみ出すとき、いま見ているページのタブを見える位置に寄せる
+// メニューが画面からはみ出すとき、いま見ているページのタブを見える位置に寄せる。
+// Webフォントが後から読み込まれて幅が変わるので、読み込み完了後にもやり直す。
 (function(){
-  var nav=document.querySelector('.site nav');
+  var wrap=document.querySelector('.site .in');
+  var nav=wrap && wrap.querySelector('nav');
   if(!nav) return;
-  var cur=nav.querySelector('[aria-current]');
-  if(cur && nav.scrollWidth>nav.clientWidth){
-    nav.scrollLeft=Math.max(0, cur.offsetLeft-16);
-  }
-  // 右端まで来たら「続きがある」の影を消す
+
   function fade(){
-    var more=nav.scrollLeft+nav.clientWidth < nav.scrollWidth-2;
-    nav.parentNode.classList.toggle('more',more);
+    var more=nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 2;
+    wrap.classList.toggle('more', more);
   }
-  fade();
-  nav.addEventListener('scroll',fade,{passive:true});
-  window.addEventListener('resize',fade);
+
+  function focusCurrent(){
+    var cur=nav.querySelector('[aria-current]');
+    if(!cur) { fade(); return; }
+    if(nav.scrollWidth <= nav.clientWidth){ nav.scrollLeft=0; fade(); return; }
+    var left=cur.offsetLeft, right=left+cur.offsetWidth;
+    if(right > nav.scrollLeft + nav.clientWidth){
+      // 右にはみ出している → 右端にそろえる（16pxだけ余白を残す）
+      nav.scrollLeft = right - nav.clientWidth + 16;
+    } else if(left < nav.scrollLeft){
+      nav.scrollLeft = Math.max(0, left - 16);
+    }
+    fade();
+  }
+
+  focusCurrent();
+  window.addEventListener('load', focusCurrent);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(focusCurrent); }
+  nav.addEventListener('scroll', fade, {passive:true});
+  window.addEventListener('resize', focusCurrent);
 })();
