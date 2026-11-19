@@ -356,3 +356,8 @@ footer.ft .sns{font-weight:700;color:#e8edf7;margin:0 0 7px;font-size:13.5px;let
 .rk .cm{font-size:13.5px;color:var(--muted);line-height:1.8;margin:0}
 .rk .src{font-size:11.5px;color:#9aa0ad;margin:7px 0 0;letter-spacing:.01em}
 .rank-note{font-size:13px;color:var(--muted);line-height:1.8;margin:0 0 16px}
+
+/* メニューに続きがあることを示す影 */
+.site .in{position:relative}
+.site .in.more::after{content:"";position:absolute;right:0;bottom:0;width:38px;height:36px;
+  pointer-events:none;background:linear-gradient(90deg,rgba(22,39,77,0),rgba(13,24,51,.95))}
