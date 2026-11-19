@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="ロゴ">
+<circle cx="50" cy="50" r="50" fill="#ffd400"/>
+<path d="M24 58c0-15 11-27 26-27s26 12 26 27z" fill="#132345"/>
+<rect x="19" y="56" width="62" height="8" rx="4" fill="#132345"/>
+<path d="M50 31v25" stroke="#ffd400" stroke-width="3"/>
+</svg>

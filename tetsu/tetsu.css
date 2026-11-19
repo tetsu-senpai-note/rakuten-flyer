@@ -1,0 +1,334 @@
+/* ============ 現場のてつ先輩 サイト共通スタイル v3 ============ */
+:root{
+  --ink:#10172a; --ink2:#2b3447; --muted:#6a7183;
+  --navy:#16274d; --navy-d:#0d1833; --navy-l:#2a4480;
+  --gold:#c99700; --gold-l:#ffd84d; --gold-s:#fff3c9;
+  --bg:#f4f1ea; --card:#fff; --line:#e7e2d6; --line2:#f0ece2;
+  --soft:#faf8f3; --red:#c0392b; --green:#15715a;
+  --sh-1:0 1px 2px rgba(16,23,42,.05);
+  --sh-2:0 1px 3px rgba(16,23,42,.06), 0 10px 26px -14px rgba(16,23,42,.22);
+  --sh-3:0 2px 6px rgba(16,23,42,.07), 0 18px 40px -18px rgba(16,23,42,.3);
+  --r:16px; --r-s:11px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:146px}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans JP","Hiragino Sans",sans-serif;
+  font-size:16.5px;font-weight:400;line-height:1.95;letter-spacing:.01em;
+  -webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt"}
+a{color:#1f4b96;text-underline-offset:3px}
+svg.i{width:1em;height:1em;display:block;fill:none;stroke:currentColor;
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- PR帯 ---------- */
+.prbar{background:#ffe9a8;color:#4a3a00;border-bottom:1px solid #e2c868;
+  font-size:14.5px;line-height:1.6;padding:10px 16px;text-align:center;
+  font-weight:700;letter-spacing:.02em}
+
+/* ---------- 固定ヘッダー ---------- */
+.site{position:sticky;top:0;z-index:50;background:rgba(22,39,77,.97);
+  backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.site .in{max-width:640px;margin:0 auto;padding:9px 0 8px}
+.site .logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;
+  padding:1px 16px 7px}
+.site .logo .mk{width:30px;height:30px;flex:0 0 30px;border-radius:50%;
+  box-shadow:0 0 0 1.5px rgba(255,255,255,.22)}
+.site .logo b{font-size:16.5px;font-weight:900;letter-spacing:.02em;line-height:1.25;white-space:nowrap}
+.site .logo span{display:block;font-size:10px;color:#9fb0d4;font-weight:500;
+  letter-spacing:.12em;white-space:nowrap;margin-top:1px}
+.site nav{display:flex;gap:3px;overflow-x:auto;padding:0 16px;scrollbar-width:none}
+.site nav::-webkit-scrollbar{display:none}
+.site nav a{color:#b9c6e2;text-decoration:none;font-size:12.5px;font-weight:700;
+  padding:7px 12px;border-radius:8px;white-space:nowrap;letter-spacing:.02em}
+.site nav a[aria-current]{background:rgba(255,255,255,.14);color:#fff;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+
+/* ---------- パンくず ---------- */
+.crumb{max-width:640px;margin:0 auto;padding:13px 16px 0;font-size:12.5px;color:var(--muted);
+  white-space:nowrap;overflow-x:auto;scrollbar-width:none;letter-spacing:.02em}
+.crumb::-webkit-scrollbar{display:none}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb i{font-style:normal;color:#c3bcab;margin:0 7px}
+
+/* ---------- 記事ヘッダー ---------- */
+.hero{max-width:640px;margin:0 auto;padding:12px 16px 0}
+.hero .cat{display:inline-block;background:var(--navy);color:#fff;font-size:11px;
+  font-weight:700;padding:5px 12px;border-radius:6px;letter-spacing:.1em}
+.hero h1{font-size:27px;font-weight:900;line-height:1.48;margin:14px 0 0;letter-spacing:-.025em}
+.hero .meta{display:flex;align-items:center;gap:10px;margin:18px 0 0;
+  font-size:12.5px;color:var(--muted);line-height:1.6}
+.hero .meta .av{width:38px;height:38px;flex:0 0 38px;border-radius:50%;
+  box-shadow:var(--sh-1);border:1px solid var(--line)}
+.hero .meta b{color:var(--ink2);font-size:13px;font-weight:700}
+.hero .pic{margin:20px 0 0;border-radius:var(--r);overflow:hidden;
+  box-shadow:var(--sh-2);line-height:0}
+.hero .pic img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+
+main{max-width:640px;margin:0 auto;padding:16px 16px 52px}
+
+/* ---------- 見出し ---------- */
+h2{scroll-margin-top:146px;font-size:21px;font-weight:900;line-height:1.5;
+  margin:0 0 18px;letter-spacing:-.025em;padding-bottom:13px;
+  border-bottom:1px solid var(--line);position:relative}
+h2::after{content:"";position:absolute;left:0;bottom:-1px;width:58px;height:3px;
+  background:var(--navy);border-radius:2px}
+h2.n{display:flex;align-items:flex-start;gap:12px}
+h2.n .bd{flex:0 0 32px;width:32px;height:32px;background:var(--navy);color:#fff;
+  border-radius:9px;display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;margin-top:2px;letter-spacing:0;box-shadow:var(--sh-1)}
+h2.n span.t{flex:1}
+h3{scroll-margin-top:146px;font-size:17.5px;font-weight:800;margin:34px 0 12px;
+  line-height:1.55;letter-spacing:-.02em;padding-left:14px;position:relative}
+h3::before{content:"";position:absolute;left:0;top:.42em;width:4px;height:1.1em;
+  background:var(--gold);border-radius:2px}
+h4{font-size:16px;font-weight:800;margin:0;color:var(--ink);line-height:1.55;letter-spacing:-.01em}
+p{margin:0 0 17px}
+ul{padding-left:1.35em;margin:0 0 17px}
+li{margin:9px 0}
+img{max-width:100%}
+b,strong{font-weight:700}
+.mk-y{background:linear-gradient(transparent 62%,var(--gold-l) 62%);padding:0 1px}
+
+/* ---------- 面 ---------- */
+section{background:var(--card);border-radius:var(--r);padding:26px 20px;margin:20px 0;
+  box-shadow:var(--sh-2);scroll-margin-top:146px}
+.lead{background:var(--card);border-radius:var(--r);padding:24px 20px;margin:18px 0;
+  box-shadow:var(--sh-2)}
+.lead p:last-child{margin-bottom:0}
+
+/* ---------- 吹き出し ---------- */
+.say{display:flex;gap:12px;align-items:flex-start;margin:24px 0}
+.say>div:first-child{flex:0 0 50px;width:50px;text-align:center}
+.say .av{width:50px;height:50px;display:block;border-radius:50%;
+  box-shadow:var(--sh-1);border:1px solid var(--line)}
+.say .nm{display:none;font-size:10.5px;color:var(--muted);margin:4px 0 0;font-weight:700;
+  white-space:nowrap;line-height:1.3;letter-spacing:.02em}
+.say .bub{position:relative;background:var(--soft);border:1px solid var(--line);
+  border-radius:3px 14px 14px 14px;padding:15px 17px;font-size:15.5px;line-height:1.9}
+.say .bub::before{content:"";position:absolute;left:-8px;top:11px;
+  border:7px solid transparent;border-right-color:var(--line)}
+.say .bub::after{content:"";position:absolute;left:-6.5px;top:11px;
+  border:7px solid transparent;border-right-color:var(--soft)}
+.say .bub p:last-child{margin-bottom:0}
+
+/* ---------- 目次（入口の大きいやつ） ---------- */
+nav.toc{background:var(--card);border-radius:var(--r);padding:18px 18px 14px;
+  margin:20px 0 24px;box-shadow:var(--sh-2)}
+nav.toc .ttl{font-size:14px;font-weight:800;text-align:center;margin:0 0 12px;
+  color:var(--muted);letter-spacing:.08em}
+nav.toc ol{margin:0;padding-left:0;list-style:none;counter-reset:t}
+nav.toc li{counter-increment:t}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);
+  padding:13px 6px 13px 40px;position:relative;border-top:1px solid var(--line2);
+  font-weight:700;font-size:15px;line-height:1.6}
+nav.toc li:first-child a{border-top:none}
+nav.toc a::before{content:counter(t);position:absolute;left:4px;top:14px;
+  width:25px;height:25px;background:var(--soft);color:var(--navy);border:1px solid var(--line);
+  border-radius:50%;text-align:center;line-height:23px;font-size:12px;font-weight:800}
+
+/* ---------- 記事内もくじ ---------- */
+.tocin{background:var(--soft);border:1px solid var(--line);border-radius:var(--r);
+  padding:17px 18px 13px;margin:0 0 24px}
+.tocin .ttl{font-weight:800;font-size:13px;color:var(--muted);margin:0 0 9px;
+  letter-spacing:.1em;display:flex;align-items:center;gap:8px}
+.tocin .ttl svg{width:15px;height:15px;color:var(--navy)}
+.tocin ol{margin:0;padding-left:0;list-style:none;counter-reset:q}
+.tocin li{counter-increment:q}
+.tocin a{display:block;text-decoration:none;color:var(--ink);font-size:14.5px;
+  font-weight:700;padding:10px 4px 10px 28px;position:relative;
+  border-top:1px solid var(--line2);line-height:1.6}
+.tocin li:first-child a{border-top:none}
+.tocin a::before{content:counter(q);position:absolute;left:6px;top:10px;
+  color:var(--gold);font-weight:900;font-size:13px}
+
+/* ---------- 選ぶカード ---------- */
+.cards{margin:22px 0 0}
+.card{display:block;text-decoration:none;color:var(--ink);background:var(--card);
+  border-radius:var(--r);margin:0 0 18px;box-shadow:var(--sh-2);overflow:hidden;
+  transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{box-shadow:var(--sh-3);transform:translateY(-2px)}
+.card .thumb{position:relative;line-height:0;background:var(--navy-d)}
+.card .thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 18%;display:block}
+.card .thumb::after{content:"";position:absolute;inset:auto 0 0 0;height:50px;
+  background:linear-gradient(transparent,rgba(5,12,28,.3))}
+.card .thumb.gr{aspect-ratio:16/9;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:10px;line-height:1.5;text-align:center;padding:0 18px}
+.card .thumb.gr::after{display:none}
+.card .thumb.gr svg{width:34px;height:34px;stroke-width:1.5}
+.card .thumb.gr .lb{font-size:13.5px;font-weight:700;letter-spacing:.06em}
+.card .thumb.g1{background:linear-gradient(145deg,#1b2f5c,#38528f);color:#fff}
+.card .thumb.g1 .lb{color:#cfdaf2}
+.card .thumb.g2{background:linear-gradient(145deg,#12604a,#1d9173);color:#fff}
+.card .thumb.g2 .lb{color:#c9e8dd}
+.card .no{position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;
+  background:rgba(255,255,255,.95);color:var(--navy);font-weight:900;font-size:15px;
+  display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-1);z-index:2}
+.card .bd{padding:18px}
+.card .tag{display:inline-block;background:var(--gold-s);color:#7a5c00;font-weight:700;
+  font-size:11px;padding:4px 11px;border-radius:5px;margin-bottom:11px;letter-spacing:.07em}
+.card .tag.q{background:#eef1f7;color:var(--navy-l)}
+.card>.bd>b{display:block;font-size:19px;font-weight:900;line-height:1.5;
+  margin:0 0 10px;letter-spacing:-.025em}
+.card .d{font-size:14.5px;color:var(--muted);line-height:1.85;margin:0 0 16px}
+.card .go2{display:flex;align-items:center;justify-content:center;gap:7px;
+  font-weight:800;font-size:16px;color:#fff;letter-spacing:.02em;
+  background:linear-gradient(180deg,var(--navy-l),var(--navy));
+  border-radius:10px;padding:14px 10px;box-shadow:var(--sh-1)}
+.card .n{font-size:12.5px;color:var(--muted);margin:11px 0 0;text-align:center}
+.card .arw{display:inline-block;transition:transform .2s}
+.card:hover .arw{transform:translateX(4px)}
+
+/* ---------- 表 ---------- */
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 17px}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:14px 0;line-height:1.75}
+th,td{padding:13px 12px;text-align:left;vertical-align:top;
+  border:0;border-bottom:1px solid var(--line2)}
+thead th,tr:first-child th{border-bottom:2px solid var(--navy);color:var(--navy);
+  background:none;font-weight:800;font-size:13px;letter-spacing:.06em;white-space:nowrap;
+  padding-bottom:9px}
+td{color:var(--ink2)}
+td.num{text-align:right;white-space:nowrap;font-weight:800;font-size:16px;color:var(--ink)}
+#sat table td:first-child{width:40%;font-weight:700;white-space:normal;color:var(--ink)}
+table tr:last-child td,table tr:last-child th{border-bottom:0}
+
+/* ---------- 折りたたみ ---------- */
+details{scroll-margin-top:146px;border:1px solid var(--line);border-radius:var(--r-s);
+  margin:11px 0;background:var(--card);overflow:hidden;box-shadow:var(--sh-1)}
+summary{cursor:pointer;list-style:none;padding:16px 50px 16px 16px;position:relative;
+  font-weight:700;font-size:15.5px;line-height:1.6;letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:17px;top:50%;
+  width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:translateY(-20%) rotate(225deg)}
+details[open] summary{border-bottom:1px solid var(--line2)}
+summary .cnt{display:block;font-weight:500;font-size:12px;color:var(--muted);
+  margin-top:3px;letter-spacing:.04em}
+details[open] summary .hint{display:none}
+details .inner{padding:4px 16px 14px}
+
+/* ---------- 囲み ---------- */
+.good,.care,.pt{border-radius:var(--r-s);padding:17px 18px;margin:20px 0}
+.good{background:#f3faf6;border:1px solid #cfe6da}
+.good b{color:var(--green)}
+.care{background:#fdf5f3;border:1px solid #f0d0ca}
+.care b{color:var(--red)}
+.pt{background:var(--soft);border:1px solid var(--line)}
+.good p:last-child,.care p:last-child,.pt p:last-child{margin-bottom:0}
+
+/* ---------- ポイントカード ---------- */
+.pts{display:grid;gap:11px;margin:18px 0 22px}
+.pt2{display:flex;gap:14px;align-items:flex-start;background:var(--card);
+  border:1px solid var(--line);border-radius:var(--r-s);padding:16px 17px;box-shadow:var(--sh-1)}
+.pt2 .ic{flex:0 0 38px;width:38px;height:38px;border-radius:10px;background:var(--soft);
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--navy)}
+.pt2 .ic svg{width:19px;height:19px}
+.pt2 .tx{flex:1;font-size:15px;line-height:1.85;color:var(--ink2)}
+.pt2 .tx b{display:block;font-size:16px;font-weight:800;margin:0 0 5px;
+  color:var(--ink);letter-spacing:-.015em}
+
+/* ---------- 手順 ---------- */
+ol.steps{padding-left:0;list-style:none;counter-reset:s;margin:16px 0}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 18px 42px;margin:0;line-height:1.9}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:4px;
+  width:27px;height:27px;background:var(--card);color:var(--navy);
+  border:1.5px solid var(--navy);border-radius:50%;
+  text-align:center;line-height:24px;font-weight:800;font-size:13px}
+ol.steps li::after{content:"";position:absolute;left:13px;top:33px;bottom:4px;
+  width:1px;background:var(--line)}
+ol.steps li:last-child::after{display:none}
+
+/* ---------- ボタン ---------- */
+.btn{display:flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:800;font-size:17.5px;padding:19px 18px;border-radius:12px;
+  text-decoration:none;margin:26px 0 12px;letter-spacing:.01em;
+  transition:transform .15s,box-shadow .15s;text-align:center}
+.btn .arw{display:inline-block;transition:transform .2s}
+.btn:hover .arw{transform:translateX(4px)}
+.dl{background:linear-gradient(180deg,#ffe066,#f5c400);color:#3d2e00;
+  box-shadow:0 2px 4px rgba(150,110,0,.2),0 12px 24px -12px rgba(150,110,0,.5)}
+.go{background:linear-gradient(180deg,var(--navy-l),var(--navy));color:#fff;
+  box-shadow:0 2px 4px rgba(16,23,42,.2),0 12px 26px -12px rgba(16,23,42,.7)}
+.btn:active{transform:translateY(2px);box-shadow:var(--sh-1)}
+
+/* ---------- サービスカード ---------- */
+.svc{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:22px 0;
+  background:var(--card);box-shadow:var(--sh-3)}
+.svc .hd{background:linear-gradient(145deg,var(--navy-l),var(--navy-d));color:#fff;padding:18px 20px}
+.svc .hd .pr{display:inline-block;background:rgba(255,255,255,.16);color:#fff;font-size:10.5px;
+  font-weight:700;padding:3px 10px;border-radius:5px;margin-bottom:10px;letter-spacing:.14em;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.svc .hd .nm{font-size:22px;font-weight:900;line-height:1.35;margin:0;letter-spacing:-.025em}
+.svc .hd .sb{font-size:13px;color:#aebbd8;margin:7px 0 0;line-height:1.7}
+.svc .bd{padding:6px 20px 20px}
+.svc table{margin:0 0 16px;font-size:14.5px;table-layout:fixed}
+.svc table th{width:36%;color:var(--muted);font-weight:700;font-size:13px;
+  letter-spacing:.02em;white-space:normal;border-bottom:1px solid var(--line2);
+  border-right:0;background:none;padding-left:0}
+.svc table tr:first-child th{border-bottom:1px solid var(--line2);padding-bottom:13px}
+.svc table td{word-break:break-word;padding-right:0}
+.svc .btn{margin:0 0 10px}
+
+/* ---------- よくある質問 ---------- */
+.faq{margin:18px 0 0}
+.faq details{margin:0 0 11px}
+.faq summary{padding:17px 50px 17px 50px;font-size:15.5px}
+.faq summary::before{content:"Q";position:absolute;left:17px;top:16px;
+  width:24px;height:24px;background:var(--navy);color:#fff;border-radius:7px;
+  text-align:center;line-height:24px;font-size:12px;font-weight:800}
+.faq .inner{padding:14px 18px 18px 50px;position:relative;font-size:15px;line-height:1.9}
+.faq .inner::before{content:"A";position:absolute;left:17px;top:13px;
+  width:24px;height:24px;background:var(--gold-s);color:#7a5c00;border-radius:7px;
+  text-align:center;line-height:24px;font-size:12px;font-weight:800}
+.faq .inner p:last-child,.faq .inner ul:last-child{margin-bottom:0}
+
+/* ---------- カテゴリの札 ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.chip{display:inline-flex;align-items:center;background:var(--soft);
+  border:1px solid var(--line);border-radius:9px;padding:9px 14px;
+  font-size:13px;font-weight:700;color:var(--ink2);text-decoration:none;
+  letter-spacing:.01em;transition:background .15s}
+.chip:hover{background:#fff;box-shadow:var(--sh-1)}
+
+/* ---------- 次に読むページ ---------- */
+.next{margin:32px 0 0}
+.next .ttl{font-size:12.5px;font-weight:800;color:var(--muted);margin:0 0 12px;letter-spacing:.1em}
+.next a{display:flex;align-items:center;gap:14px;background:var(--card);
+  border-radius:var(--r-s);padding:15px 16px;margin:0 0 10px;
+  text-decoration:none;color:var(--ink);box-shadow:var(--sh-1);transition:box-shadow .15s}
+.next a:hover{box-shadow:var(--sh-2)}
+.next a .ic{flex:0 0 38px;width:38px;height:38px;border-radius:10px;background:var(--soft);
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--navy)}
+.next a .ic svg{width:18px;height:18px}
+.next a .tx{flex:1;font-weight:700;font-size:15px;line-height:1.6;letter-spacing:-.01em}
+.next a .tx small{display:block;font-weight:400;font-size:12.5px;color:var(--muted);margin-top:3px;letter-spacing:0}
+.next a .ar{color:#b6b0a0;font-weight:800}
+
+/* ---------- 著者欄 ---------- */
+.author{background:var(--card);border-radius:var(--r);padding:22px 20px;margin:34px 0 0;
+  box-shadow:var(--sh-2);display:flex;gap:16px;align-items:flex-start}
+.author .av{flex:0 0 58px;width:58px;height:58px;border-radius:50%;
+  box-shadow:var(--sh-1);border:1px solid var(--line)}
+.author .nm{font-weight:900;font-size:16px;margin:0 0 3px;letter-spacing:-.01em}
+.author .rl{font-size:12px;color:var(--muted);margin:0 0 10px;letter-spacing:.02em}
+.author p{font-size:14px;line-height:1.9;margin:0;color:var(--muted)}
+.author .ai{font-size:12px;color:var(--muted);margin:10px 0 0;
+  padding-top:9px;border-top:1px solid var(--line2);letter-spacing:.01em}
+
+/* ---------- 小さい字・フッター ---------- */
+.note{font-size:13.5px;color:var(--muted);line-height:1.85}
+.note a{color:#1f4b96}
+.brand{text-align:center;font-weight:800;font-size:16px;line-height:2;margin:32px 0 0;
+  color:var(--ink2);letter-spacing:-.01em}
+.brand b{color:var(--gold)}
+footer.ft{background:var(--navy-d);color:#8f9db9;margin-top:38px;padding:28px 16px 34px;
+  text-align:center;font-size:12.5px;line-height:2}
+footer.ft a{color:#c3cee6;text-decoration:none}
+footer.ft .sns{font-weight:700;color:#e8edf7;margin:0 0 7px;font-size:13.5px;letter-spacing:.02em}
+
+@media (min-width:640px){
+  body{font-size:17px}
+  .hero h1{font-size:32px}
+  h2{font-size:23px}
+}
