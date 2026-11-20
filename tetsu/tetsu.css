@@ -372,10 +372,11 @@ footer.ft .sns{font-weight:700;color:#e8edf7;margin:0 0 7px;font-size:13.5px;let
 .sns-btns svg{width:19px;height:19px;flex:0 0 19px;display:block;
   fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .sns-btns .at{font-weight:500;color:#aab6d2;font-size:13px}
-/* 著者欄のSNS */
-.author .sns2{display:flex;gap:8px;margin:11px 0 0;flex-wrap:wrap}
-.author .sns2 a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
-  background:var(--soft);border:1px solid var(--line);color:var(--ink2);
+/* 小さいSNSボタン（著者欄・本文の囲みの中など） */
+.sns2{display:flex;gap:8px;margin:11px 0 0;flex-wrap:wrap}
+.sns2 a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+  background:#fff;border:1px solid var(--line);color:var(--ink2);
   font-weight:700;font-size:12.5px;padding:7px 12px;border-radius:999px}
-.author .sns2 svg{width:15px;height:15px;flex:0 0 15px;display:block;
+.sns2 svg{width:15px;height:15px;flex:0 0 15px;display:block;
   fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.author .sns2 a{background:var(--soft)}
